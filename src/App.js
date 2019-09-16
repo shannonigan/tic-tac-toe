@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
+import Home from "./component/Home";
+import Game from "./component/Game";
+import NoMatch from "./component/NoMatch";
 import './App.css';
+import { Route, Switch } from "react-router-dom";
+import { Container } from "semantic-ui-react";
+import Navbar from "./component/Navbar"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <>
+  <Navbar />
+
+    <Container>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/game" component={Game} />
+        <Route component={NoMatch} />
+      </Switch>
+      </Container>
+  
+  </>
+);
 
 export default App;
+
+
+
+// Tic Tac Toe
+// Basic Objectives
+
+// Create react app
+// Create the Tic Tac Toe game
+// Just start with 1 player vs computer. 
+// Remember to utilize React's modularity 
+// (make a component that can be used in many places.)
+ 
+
+// Bonus Objectives
+
+// Add a second player.
+// Style the game
+ 
